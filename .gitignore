@@ -136,3 +136,4 @@ Temporary Items
 # MDB Exclusions
 mdb.*
 /static/js/modules/
+/static/mdb-addons/
