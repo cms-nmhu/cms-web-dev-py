@@ -6,7 +6,7 @@ from .base import *
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'm-sqy&6@h)hb@y3ci_$5ukr8!-$4cjed9#bbc%q$yg55usokic'
+SECRET_KEY = os.environ['SECRET_KEY']#'m-sqy&6@h)hb@y3ci_$5ukr8!-$4cjed9#bbc%q$yg55usokic'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -19,8 +19,8 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-			'NAME': 'cswebdb',
-			'USER': 'postgres',
+			'NAME': 'cmswebdb',
+			'USER': os.environ['DB_USER'],
 			'PASSWORD': '1',
 			'HOST': 'localhost',
 			'PORT': '5432'
