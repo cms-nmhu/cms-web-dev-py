@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Computer Science{% endblock title %}
+{% block home %}{{ home.content|safe }}{% endblock home %}
+
+{% block content %}
+	{{ academics.content|safe }}
+	<hr class="my-5">
+	{{ faculty.content|safe }}
+	<hr class="my-5">
+	{{ gallery.content|safe }}
+	<hr class="my-5">
+	{{ news.content|safe }}
+	<hr class="my-5">
+	{{ contact.content|safe }}
+{% endblock content %}
+
+{% block javascript %}
+	<script type="text/javascript">
+		$(function () {
+			$("#mdb-lightbox-ui").load("{% static 'mdb-addons/mdb-lightbox-ui.html' %}");
+		});
+	</script>
+{% endblock javascript %}
