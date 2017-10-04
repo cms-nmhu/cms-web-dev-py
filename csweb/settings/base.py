@@ -11,33 +11,20 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-from django.core.exceptions import ImproperlyConfigured
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Handling Key Import Errors
-def get_env_variable(var_name):
-	""" Get the environment variable or return exception """
-	try:
-		return os.environ[var_name]
-	except KeyError:
-		error_msg = "Set the %s environment variable" % var_name
-		raise ImproperlyConfigured(error_msg)
-
-# Get ENV VARIABLES key
-ENV_ROLE = get_env_variable('ENV_ROLE')
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'm-sqy&6@h)hb@y3ci_$5ukr8!-$4cjed9#bbc%q$yg55usokic'
+# # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = 'm-sqy&6@h)hb@y3ci_$5ukr8!-$4cjed9#bbc%q$yg55usokic'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-DB_PASS = get_env_variable('DB_PASS')
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -89,21 +76,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'csweb.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-			'NAME': 'cswebDB',
-			'USER': 'postgres',
-			'PASSWORD': DB_PASS,
-			'HOST': '/tmp',
-			'PORT': '5432'
-    }
-}
 
 
 # Password validation

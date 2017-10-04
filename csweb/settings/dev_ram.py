@@ -19,10 +19,10 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-			'NAME': 'cswebDB',
+			'NAME': 'cswebdb',
 			'USER': 'postgres',
-			'PASSWORD': DB_PASS,
-			'HOST': '/tmp',
+			'PASSWORD': '1',
+			'HOST': 'localhost',
 			'PORT': '5432'
     }
 }
