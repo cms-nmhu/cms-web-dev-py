@@ -137,3 +137,5 @@ Temporary Items
 mdb.*
 /static/js/modules/
 /static/mdb-addons/
+
+.*_prod.py
