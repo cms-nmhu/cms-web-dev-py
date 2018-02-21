@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block title %}Computer Science{% endblock title %}
-{% block home %}{{ home.content|safe }}{% endblock home %}
+{% block home %}{% include 'csweb/home.html' %}{% endblock home %}
 
 {% block content %}
-	{{ academics.content|safe }}
+	{% include 'csweb/academics.html' %}
 	<hr class="my-5">
-	{{ faculty.content|safe }}
+	{% include 'csweb/faculty.html' %}
 	<hr class="my-5">
-	{{ gallery.content|safe }}
+	{% include 'csweb/gallery.html' %}
 	<hr class="my-5">
-	{{ news.content|safe }}
+	{% include 'csweb/news.html' %}
 	<hr class="my-5">
-	{{ contact.content|safe }}
+	{% include 'csweb/contact.html' %}
 {% endblock content %}
 
 {% block javascript %}
