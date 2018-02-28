@@ -2,9 +2,10 @@
 {% load static %}
 
 {% block title %}Computer Science{% endblock title %}
-{% block home %}{{ home.content|safe }}{% endblock home %}
+{% block home %}{% include 'csweb/home.html' %}{% endblock home %}
 
 {% block content %}
+<<<<<<< HEAD
     {{ academics.content|safe }}
     <hr class="my-5">
     {{ faculty.content|safe }}
@@ -14,6 +15,17 @@
     {{ news.content|safe }}
     <hr class="my-5">
     {{ contact.content|safe }}
+=======
+	{% include 'csweb/academics.html' %}
+	<hr class="my-5">
+	{% include 'csweb/faculty.html' %}
+	<hr class="my-5">
+	{% include 'csweb/gallery.html' %}
+	<hr class="my-5">
+	{% include 'csweb/news.html' %}
+	<hr class="my-5">
+	{% include 'csweb/contact.html' %}
+>>>>>>> 5059987992ab4e31fcb74a6709c2a0c76ee108cf
 {% endblock content %}
 
 {% block javascript %}
