@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Results{% endblock title %}
+{% block home %}{{ home.content|safe }}{% endblock home %}
+
+{% block content %}
+    {% for result in results %}
+        {{ result }}<br>
+    {% endfor %}
+{% endblock content %}
