@@ -5,27 +5,15 @@
 {% block home %}{% include 'csweb/home.html' %}{% endblock home %}
 
 {% block content %}
-<<<<<<< HEAD
-    {{ academics.content|safe }}
+    {% include 'csweb/academics.html' %}
     <hr class="my-5">
-    {{ faculty.content|safe }}
+    {% include 'csweb/faculty.html' %}
     <hr class="my-5">
-    {{ gallery.content|safe }}
+    {% include 'csweb/gallery.html' %}
     <hr class="my-5">
-    {{ news.content|safe }}
+    {% include 'csweb/news.html' %}
     <hr class="my-5">
-    {{ contact.content|safe }}
-=======
-	{% include 'csweb/academics.html' %}
-	<hr class="my-5">
-	{% include 'csweb/faculty.html' %}
-	<hr class="my-5">
-	{% include 'csweb/gallery.html' %}
-	<hr class="my-5">
-	{% include 'csweb/news.html' %}
-	<hr class="my-5">
-	{% include 'csweb/contact.html' %}
->>>>>>> 5059987992ab4e31fcb74a6709c2a0c76ee108cf
+    {% include 'csweb/contact.html' %}
 {% endblock content %}
 
 {% block javascript %}
