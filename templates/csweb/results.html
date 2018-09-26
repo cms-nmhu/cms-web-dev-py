@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block title %}Results{% endblock title %}
-{% block home %}{{ home.content|safe }}{% endblock home %}
+{% block navbarstyle %}style="background-color:#3f51b5!important"{% endblock navbarstyle %}
 
 {% block content %}
     {% for result in results %}
-        {{ result }}<br>
+        <a href="{{ result.url }}"><h3>{{ result.title }}</h3></a>
     {% endfor %}
 {% endblock content %}

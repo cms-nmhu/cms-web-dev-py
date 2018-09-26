@@ -1,21 +1,26 @@
 <section id="academics" class="section feature-box wow fadeIn" data-wow-delay="0.3s">
-	<h1 class="section-heading h1 pt-5">Academics</h1>
-	<p class="section-description lead grey-text">The mission of the Department of Computer and Mathematical Sciences is to train students in the fields of mathematics, computer science, physics, and engineering. By encouraging and developing problem solving, critical/analytical thinking, and practical, laboratory-based skills, our students will be well prepared for careers in any combination of these fields, either via solid preparation for further graduate education or immediate entrance into the workforce (industry, teaching, and national laboratories).</p>
-	<div class="row features-big">
-		<div class="col-md-4 mb-r">
-			<i class="fa fa-area-chart pink-text"></i>
-			<h4 class="feature-title">Learn about our Computer Science program</h4>
-			<p class="grey-text"></p>
-		</div>
-		<div class="col-md-4 mb-r">
-			<i class="fa fa-pencil cyan-text"></i>
-			<h4 class="feature-title">Learn about our Mathematics program</h4>
-			<p class="grey-text"></p>
-		</div>
-		<div class="col-md-4 mb-r">
-			<i class="fa fa-laptop indigo-text"></i>
-			<h4 class="feature-title">Learn about our Engineering program</h4>
-			<p class="grey-text"></p>
-		</div>
-	</div>
+    <h1 class="section-heading h1 pt-5">Academics</h1>
+    <p class="section-description lead grey-text">The mission of the Department of Computer and Mathematical Sciences is to train students in the fields of mathematics, computer science, physics, and engineering. By encouraging and developing problem solving, critical/analytical thinking, and practical, laboratory-based skills, our students will be well prepared for careers in any combination of these fields, either via solid preparation for further graduate education or immediate entrance into the workforce (industry, teaching, and national laboratories).</p>
+    <div class="row features-big">
+        <div class="col-md-3 mb-r">
+            <i class="fas fa-desktop fa-5x pink-text"></i>
+            <h4 class="feature-title"><a href="{% url 'computer-science' %}">Learn about our Computer Science program</a></h4>
+            <p class="grey-text"></p>
+        </div>
+        <div class="col-md-3 mb-r">
+            <i class="fas fa-calculator fa-5x cyan-text"></i>
+            <h4 class="feature-title"><a href="{% url 'math' %}">Learn about our Mathematics program</a></h4>
+            <p class="grey-text"></p>
+        </div>
+        <div class="col-md-3 mb-r">
+            <i class="fas fa-laptop fa-5x indigo-text"></i>
+            <h4 class="feature-title"><a href="{% url 'engineering' %}">Learn about our Engineering program</a></h4>
+            <p class="grey-text"></p>
+        </div>
+        <div class="col-md-3 mb-r">
+            <i class="fas fa-atom fa-5x indigo-text"></i>
+            <h4 class="feature-title"><a href="{% url 'physics' %}">Learn about our Physics program</a></h4>
+            <p class="grey-text"></p>
+        </div>
+    </div>
 </section>

@@ -9,7 +9,7 @@
         <title>{% block title %}{% endblock title %}</title>
 
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
         {% load static %}
         <!-- Bootstrap -->
@@ -23,38 +23,45 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
+        <div id="mdb-lightbox-ui"></div>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-                <div class="container smooth-scroll">
-                    <a class="navbar-brand" href="#"><strong>MDB</strong></a>
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" {% block navbarstyle %}{% endblock navbarstyle %}>
+                <div class="container">
+                    <div class="font-up-bold text-uppercase" style="width:400px">
+                        <ol class="breadcrumb">
+                            {% block page_title %}<li class="breadcrumb-item active"><strong>CMS</strong></li>{% endblock page_title %}
+                        </ol>
+                    </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#home">Home</a>
-                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#academics" data-offset="60">Academics</a>
+                                <a class="nav-link" href="{% block homeurl %}#home{% endblock homeurl %}">Home</a>
                             </li>
+                            {% block navbarlinks %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#academics" data-offset="60">Academics</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#faculty" data-offset="60">Faculty</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#gallery" data-offset="60">Gallery</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#news" data-offset="60">News</a>
+                                </li>
+                            {% endblock navbarlinks %}
                             <li class="nav-item">
-                                <a class="nav-link" href="#faculty" data-offset="60">Faculty</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#gallery" data-offset="60">Gallery</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#news" data-offset="60">News</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact" data-offset="60">Contact</a>
+                                <a class="nav-link" href="{% block contacturl %}#contact{% endblock contacturl %}" data-offset="60">Contact</a>
                             </li>
                         </ul>
-                        <form class="form-inline" action="{% url 'search' %}" method="post">
+                        <!-- <form class="form-inline" action="{% url 'search' %}" method="post">
                             {% csrf_token %}
                             <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">
-                        </form>
+                        </form> -->
                     </div>
                 </div>
             </nav>
@@ -94,7 +101,7 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                <div class="container-fluid">© 2017 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a></div>
+                <div class="container-fluid">© 2017 Copyright: Computer and Mathematical Sciences Department</div>
             </div>
         </footer>
 
@@ -118,6 +125,10 @@
                     toastr.{{ message.tags }}("{{ message }}");
                 {% endfor %}
             {% endif %}
+
+            $(function () {
+                $("#mdb-lightbox-ui").load("{% static 'mdb-addons/mdb-lightbox-ui.html' %}");
+            });
         </script>
         {% block javascript %}{% endblock javascript %}
     </body>

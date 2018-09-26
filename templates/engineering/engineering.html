@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Computer Science{% endblock title %}
+{% block navbarstyle %}style="background-color:#3f51b5!important"{% endblock navbarstyle %}
+{% block page_title %}
+    <li class="breadcrumb-item"><a href="{% url 'index' %}"><h5 class="mr-3 mb-0"><strong>CMS</strong></h5></a></li>
+    <li class="breadcrumb-item active"><strong>Engineering</strong></li>
+{% endblock page_title %}
+
+{% block homeurl %}/{% endblock homeurl %}
+
+{% block navbarlinks %}
+    <li class="nav-item">
+        <a class="nav-link" href="#faculty" data-offset="60">Faculty</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#programs" data-offset="60">Programs</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#mission" data-offset="60">Mission</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#news" data-offset="60">News</a>
+    </li>
+{% endblock navbarlinks %}
+
+{% block content %}
+    {% include 'engineering/faculty.html' %}
+    <hr class="my-5">
+    {% include 'engineering/programs.html' %}
+    <hr class="my-5">
+    {% include 'engineering/mission.html' %}
+    <hr class="my-5">
+    {% include 'engineering/news.html' %}
+    <hr class="my-5">
+    {% include 'csweb/contact.html' %}
+{% endblock content %}

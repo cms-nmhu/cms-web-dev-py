@@ -22,4 +22,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.IndexView.as_view(), name="index"),
     url(r'^search/$', views.SearchView.as_view(), name="search"),
+    url(r'^math/$', views.MathDepartmentView.as_view(), name="math"),
+    url(r'^physics/$', views.PhysicsDepartmentView.as_view(), name="physics"),
+    url(r'^engineering/$', views.EngineeringDepartmentView.as_view(), name="engineering"),
+    url(r'^computer_science/$', views.ComputerScienceDepartmentView.as_view(), name="computer-science"),
 ]
